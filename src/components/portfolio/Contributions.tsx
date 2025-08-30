@@ -31,9 +31,9 @@ const Contributions = () => {
       type: "3rd Prize",
       icon: Award,
       achievements: [
-        "Healthcare Solution"
+        "Live Video Watching System"
       ],
-      description: "Created innovative healthcare technology solution at Bajaj Finserv's HealthRx hackathon, securing 3rd place among competitive participants.",
+      description: "Created innovative live video watching system at Bajaj Finserv's HealthRx hackathon, securing 3rd place among competitive participants.",
       category: "Hackathon"
     }
   ];
