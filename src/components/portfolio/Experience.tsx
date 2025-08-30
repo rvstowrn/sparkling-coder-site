@@ -5,6 +5,29 @@ import { Building, Calendar } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
+      company: "SpotDraft",
+      role: "Senior Software Engineer",
+      duration: "Oct 2024 - Present • 11 mos",
+      description: "Leading software development initiatives and mentoring junior developers. Working on scalable web applications and implementing best practices for code quality and performance.",
+      technologies: ["React", "TypeScript", "Node.js", "MongoDB", "AWS"],
+      type: "Full-time",
+      location: "Bangalore Urban, Karnataka, India",
+      roles: [
+        {
+          title: "Senior Software Engineer",
+          period: "Oct 2024 - Present • 11 mos"
+        },
+        {
+          title: "Software Engineer", 
+          period: "Jun 2022 - Present • 3 yrs 3 mos"
+        },
+        {
+          title: "Junior Software Engineer",
+          period: "May 2021 - Jun 2022 • 1 yr 2 mos"
+        }
+      ]
+    },
+    {
       company: "GMETRIxr",
       role: "React Developer Intern",
       duration: "Internship",
@@ -53,10 +76,28 @@ const Experience = () => {
                         </Badge>
                       </div>
                       
-                      <div className="flex items-center gap-2 mb-4 text-muted-foreground">
-                        <Calendar className="w-4 h-4" />
-                        <span className="text-sm">{exp.role} • {exp.duration}</span>
-                      </div>
+                      {exp.roles ? (
+                        <div className="mb-4">
+                          {exp.location && (
+                            <div className="text-sm text-muted-foreground mb-3">
+                              {exp.location}
+                            </div>
+                          )}
+                          <div className="space-y-2">
+                            {exp.roles.map((role, roleIndex) => (
+                              <div key={roleIndex} className="flex items-center gap-2 text-muted-foreground">
+                                <Calendar className="w-4 h-4" />
+                                <span className="text-sm">{role.title} • {role.period}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="flex items-center gap-2 mb-4 text-muted-foreground">
+                          <Calendar className="w-4 h-4" />
+                          <span className="text-sm">{exp.role} • {exp.duration}</span>
+                        </div>
+                      )}
                       
                       <p className="text-muted-foreground leading-relaxed mb-6">
                         {exp.description}
